@@ -1,0 +1,7 @@
+numpy
+scipy
+tensorflow
+matplotlib
+opencv-python
+pillow
+streamlit

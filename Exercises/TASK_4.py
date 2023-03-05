@@ -70,7 +70,7 @@ def rotate_y(points: np.array, angle: float) -> tf.Tensor:
     rotate_object = tf.matmul(tf.cast(points, tf.float32), tf.cast(rotation_matrix, tf.float32))
     return rotate_object
 
-def rotations(theta_x, theta_y, theta_z):
+def cube_rotations(theta_x: float, theta_y: float, theta_z: float):
     init_cube = cube_object(bottom_lower=(0, 0, 0), side_length=3)
     plot_object(init_cube, "Cube in 3D")
 
@@ -86,7 +86,7 @@ def rotations(theta_x, theta_y, theta_z):
     plot_object(rotated_object, "Rotated cube in z by 75 degrees")
 
 def main():
-    rotations(75, 75, 75)
+    cube_rotations(75, 75, 75)
 
 if __name__ == "__main__":
     main()

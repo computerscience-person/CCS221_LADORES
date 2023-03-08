@@ -2,10 +2,12 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 import Exercises.TASK_1 as task1
+import Exercises.TASK_2 as task2
 
 def main():
     st.title("Midterm Exam in CCS221")
     st.header("Task 1")
+    st.sidebar.header("Line Algorithm Parameters")
     x0, y0, x1, y1 = st.sidebar.slider('Starting X', 1, 1000), \
                      st.sidebar.slider('Starting Y', 1, 1000), \
                      st.sidebar.slider('Ending X', 1, 1000, 100), \

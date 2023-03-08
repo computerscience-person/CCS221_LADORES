@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 from scipy.spatial import Delaunay
 import tensorflow as tf
-from solids import *
+from Exercises.solids import *
 
 def plot_object(points, title: str):
     '''Plots an object, assuming it's convex and not too complex.'''

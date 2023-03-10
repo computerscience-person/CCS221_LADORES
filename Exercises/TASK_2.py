@@ -18,6 +18,8 @@ def change(x, y, color):
     color : int
         hue of color
     '''
+    
+    fig = plt.figure()
     for i in range(len(arr_2d)):
         for j in range(len(arr_2d)):
             arr_2d[x][y] = color
@@ -25,7 +27,8 @@ def change(x, y, color):
     img = plt.imshow(arr_2d, cmap='rainbow', interpolation='none')
     img.set_clim([0, 100])
     plt.colorbar()
-    plt.show()
+    
+    return fig
 
 def main():
     change(2, 1, 85)

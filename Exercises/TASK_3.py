@@ -75,10 +75,12 @@ def reflect(img, axis):
     return reflected
 
 def visualize(img):
+    fig = plt.figure()
     plt.imshow(img)
     plt.axis('off')
     plt.show()
-    
+    return fig
+
 def multiple_image_load():
     '''
     Loads multiple images from a list of image paths (img_paths).

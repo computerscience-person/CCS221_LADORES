@@ -20,7 +20,7 @@ def plot_object(points, title: str):
     ax.set_zlim3d(-5,5)
     plt.title(title)
 
-    plt.show()
+    return fig
 
 def rotate_x(points: np.array, angle: float) -> tf.Tensor:
     """Rotates a 3D object around the x-axis by a given angle in degrees.

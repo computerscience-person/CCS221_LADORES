@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 from scipy.spatial import Delaunay
 import tensorflow as tf
-from Exercises.solids import *
+from solids import *
 
 def plot_object(points, title: str):
     '''Plots an object, assuming it's convex and not too complex.'''
@@ -116,8 +116,8 @@ def pyramid_rotations(theta_x: float, theta_y: float, theta_z: float):
     plot_object(rotated_object, "Rotated pyramid in z by 75 degrees")
 
 def prism_rotations(theta_x: float, theta_y: float, theta_z: float):
-    init_prism = prism_object(bottom_lower=(0, 0, 0), base_width = 1, height = 5, lenght = 5)
-    plot_object(init_prism, "Prism in 3D")                                                                                                                                                                                                                                                                                                       in 3D")
+    init_prism = prism_object(bottom_lower=(0, 0, 0), base_width = 1, height = 5, length= 5)
+    plot_object(init_prism, "Prism in 3D")
 
     points = tf.constant(init_prism)
 
@@ -132,7 +132,7 @@ def prism_rotations(theta_x: float, theta_y: float, theta_z: float):
 
 def octa_rotations(theta_x: float, theta_y: float, theta_z: float):
     init_octahedron = octa_object(bottom_lower=(0, 0, 0), side_length=5)
-    plot_object(init_octahedron, "Octahedron in 3D")                                                                                                                                                                                                                                                                                                       in 3D")
+    plot_object(init_octahedron, "Octahedron in 3D")
 
     points = tf.constant(init_octahedron)
 
@@ -147,10 +147,10 @@ def octa_rotations(theta_x: float, theta_y: float, theta_z: float):
     
 def main():
     cube_rotations(75, 75, 75)
-    tetra_rotations()
-    pyramid_rotations()
-    prism_rotations()
-    octa_rotations()
+    tetra_rotations(75, 75, 75)
+    pyramid_rotations(75, 75, 75)
+    prism_rotations(75, 75, 75)
+    octa_rotations(75, 75, 75)
 
 
 if __name__ == "__main__":

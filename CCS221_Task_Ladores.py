@@ -30,18 +30,25 @@ def main():
         _task3_translationy = st.sidebar.slider('Y Translation', 0, 1000)
         
     if 'reflect' in _task3_transformations:
-        _task3_reflectionx = st.sidebar.checkbox('Reflect along x axis')
+        _task3_reflectionx = st.sidebar.checkbox('Reflect along x axis', True)
         _task3_reflectiony = st.sidebar.checkbox('Reflect along y axis')
+        _task3_reflection = ''
+        if _task3_reflectionx and _task3_reflectiony:
+            _task3_reflection = 'x y'
+        elif _task3_reflectionx:
+            _task3_reflection = 'x'
+        elif _task3_reflectiony:
+            _task3_reflection = 'y'
         
     if 'rotate' in _task3_transformations:
         _task3_rotation = st.sidebar.slider('Rotation', -360, 360, 0)
         
     if 'scale' in _task3_transformations:
-        _task3_scale = st.sidebar.slider('Scale', 0, 5, 1)
+        _task3_scale = st.sidebar.slider('Scale', 0.0, 5.0, 1.0, 0.000001)
         
     if 'shear' in _task3_transformations:
-        _task3_shearx = st.sidebar.slider('X Shear', 0, 5, 1)
-        _task3_sheary = st.sidebar.slider('Y Shear', 0, 5, 1)
+        _task3_shearx = st.sidebar.slider('X Shear', 0.0, 5.0, 0.0, 0.000001)
+        _task3_sheary = st.sidebar.slider('Y Shear', 0.0, 5.0, 0.0, 0.000001)
                 
     st.header("Task 1")
     st.subheader("DDA Line Algorithm")
@@ -62,6 +69,23 @@ def main():
     st.write('Original Image:')
     st.pyplot(task3.visualize(task3_image))
     st.write('Image Transformations: ', *_task3_transformations)
+    for transformation in _task3_transformations:
+        match transformation:
+            case 'translate':
+                st.write("Translation")
+                st.pyplot(task3.visualize(task3.translate(task3_image, _task3_translationx, _task3_translationy)))
+            case 'rotate':
+                st.write("Rotation")
+                st.pyplot(task3.visualize(task3.rotate(task3_image, _task3_rotation)))
+            case 'reflect':
+                st.write("Reflect")
+                st.pyplot(task3.visualize(task3.reflect(task3_image, _task3_reflection)))
+            case 'scale':
+                st.write("Scale")
+                st.pyplot(task3.visualize(task3.scale(task3_image, _task3_scale)))
+            case 'shear':
+                st.write("Shear")
+                st.pyplot(task3.visualize(task3.shear(task3_image, _task3_shearx, _task3_sheary)))
     
     if st.button("Exit"):
         st.stop()

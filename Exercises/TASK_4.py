@@ -84,9 +84,74 @@ def cube_rotations(theta_x: float, theta_y: float, theta_z: float):
 
     rotated_object = rotate_z(init_cube, theta_z)
     plot_object(rotated_object, "Rotated cube in z by 75 degrees")
+    
+def tetra_rotations(theta_x: float, theta_y: float, theta_z: float):
+    init_tetrahedron = tetra_object(bottom_lower=(0, 0, 0), side_length=3)
+    plot_object(init_tetrahedron, "Tetrahedron in 3D")
 
+    points = tf.constant(init_tetrahedron)
+
+    rotated_object = rotate_x(init_tetrahedron, theta_x)
+    plot_object(rotated_object, "Rotated tetrahedron in x by 75 degrees")
+
+    rotated_object = rotate_y(init_tetrahedron, theta_y)
+    plot_object(rotated_object, "Rotated tetrahedron in y by 75 degrees")
+
+    rotated_object = rotate_z(init_tetrahedron, theta_z)
+    plot_object(rotated_object, "Rotated tetrahedron in z by 75 degrees")
+
+def pyramid_rotations(theta_x: float, theta_y: float, theta_z: float):
+    init_pyramid = pyramid_object(bottom_lower=(0, 0, 0), base_length=5)
+    plot_object(init_pyramid, "Pyramid in 3D")
+
+    points = tf.constant(init_pyramid)
+
+    rotated_object = rotate_x(init_pyramid, theta_x)
+    plot_object(rotated_object, "Rotated pyramid in x by 75 degrees")
+
+    rotated_object = rotate_y(init_pyramid, theta_y)
+    plot_object(rotated_object, "Rotated pyramid in y by 75 degrees")
+
+    rotated_object = rotate_z(init_pyramid, theta_z)
+    plot_object(rotated_object, "Rotated pyramid in z by 75 degrees")
+
+def prism_rotations(theta_x: float, theta_y: float, theta_z: float):
+    init_prism = prism_object(bottom_lower=(0, 0, 0), base_width = 1, height = 5, lenght = 5)
+    plot_object(init_prism, "Prism in 3D")                                                                                                                                                                                                                                                                                                       in 3D")
+
+    points = tf.constant(init_prism)
+
+    rotated_object = rotate_x(init_prism, theta_x)
+    plot_object(rotated_object, "Rotated cube in x by 75 degrees")
+
+    rotated_object = rotate_y(init_prism, theta_y)
+    plot_object(rotated_object, "Rotated prism in y by 75 degrees")
+
+    rotated_object = rotate_z(init_prism, theta_z)
+    plot_object(rotated_object, "Rotated prism in z by 75 degrees")
+
+def octa_rotations(theta_x: float, theta_y: float, theta_z: float):
+    init_octahedron = octa_object(bottom_lower=(0, 0, 0), side_length=5)
+    plot_object(init_octahedron, "Octahedron in 3D")                                                                                                                                                                                                                                                                                                       in 3D")
+
+    points = tf.constant(init_octahedron)
+
+    rotated_object = rotate_x(init_octahedron, theta_x)
+    plot_object(rotated_object, "Rotated octahedron in x by 75 degrees")
+
+    rotated_object = rotate_y(init_octahedron, theta_y)
+    plot_object(rotated_object, "Rotated octahedron in y by 75 degrees")
+
+    rotated_object = rotate_z(init_octahedron, theta_z)
+    plot_object(rotated_object, "Rotated octahedron in z by 75 degrees")
+    
 def main():
     cube_rotations(75, 75, 75)
+    tetra_rotations()
+    pyramid_rotations()
+    prism_rotations()
+    octa_rotations()
+
 
 if __name__ == "__main__":
     main()
